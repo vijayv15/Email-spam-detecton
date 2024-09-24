@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Email Spam Detection</title>
+</head>
+
+<body class='bg-[#fffbeb]'>
+  <!-- Show -->
+  <div class="flex justify-center items-center w-full px-10 ">
+    <h3
+      class="mt-3 w-1/2 text-[45px] w-1/2  font-semibold p-4">
+      Email Spam Detection Result:</h3>
+    <div class="flex w-1/2 justify-end items-start">
+      <a href="/">
+        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">
+          Go Back
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="results text-center mt-5 flex-col justify-center items-center w-full pb-20px">
+    {% if prediction == 'Spam' %}
+    <h1 class="text-danger text-[40px]">Prediction: Gotcha! This is a SPAM message.</h1>
+    <div class='flex justify-center items-center py-2'>
+    <img class="gif" src="{{ url_for('static', filename='spam.webp') }}" alt="SPAM Image" />
+    </div>
+    {% elif prediction == 'Ham' %}
+    <h1 class="text-success text-[40px]">Prediction: Great! This is NOT a spam message.</h1>
+    <div class='flex justify-center items-center py-2'>
+      <img class="gif" src="{{ url_for('static', filename='not-spam.webp') }}" alt="SPAM Image" />
+      </div>
+    {% endif %}
+  </div>
+
+</body>
+</html>

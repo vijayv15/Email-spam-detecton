@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Sorts+Mill+Goudy:ital@0;1&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Italiana&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Sorts+Mill+Goudy:ital@0;1&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <title>Email Spam Detection</title>
+
+</head>
+
+<body class='bg-[#fffbeb]'>
+  <div class='flex-col p-4 h-[100%] w-full space-y-10'>
+     <div class='flex justify-center items-center '>
+        <h1 class='text-[75px] text-black transition duration-150 ease-in-out font-semibold pt-[150px]' style="font-family: 'Italiana', sans-serif; ">Welcome to our spam detection website! </h1>
+     </div>
+     <div class='flex-col justify-center items-center w-full'>
+      <h1 class=' text-[40px] font-semibold text-[#475569] w-full text-center'style="  font-family:'Teachers', sans-serif; ">Say goodbye to spam with our powerful detection tool,</h1>
+      <h1 class=' text-[40px] font-semibold text-[#475569] w-full text-center'style="  font-family:'Teachers', sans-serif; "> safeguarding your digital space with precision.</h1>
+   </div>
+   <div class='flex-col justify-center items-center '>
+    <h1 class='text-[35px] font-semibold pt-[10px] text-[#71717a] text-center' style="  font-family:'Teachers', sans-serif; ">Enjoy a spam-free digital life with our advanced detection website, </h1>
+    <h1 class='text-[35px] font-semibold pt-[10px] text-[#71717a] text-center' style="  font-family:'Teachers', sans-serif; "> safeguarding your online activities</h1>
+ </div>
+     <div class='flex justify-center items-center w-full py-2'>
+        <button class="px-[50px] py-[20px] btn btn-lg btn-primary rounded-[40px] text-[20px] font-semibold drop-shadow-lg" onclick="scrollToForm()">Get Started</button>
+     </div>
+  </div>
+
+  <!-- Input form -->
+   <div class="flex h-full w-full pt-[300px] items-center justify-center pb-[100px]">
+     <div id="form-section" class="container">
+       <h2 class="text-center mt-[-100px] text-[40px] pb-4 font-lg"style=" font-family: 'Sorts Mill Goudy', serif; ">Enter an Email to check whether it's Spam or Ham</h2>
+   
+       <form action="/" method="POST" onsubmit="return validateForm()">
+         <div class="flex-col p-4 py-2">
+           <textarea class="form-control text-[25px] drop-shadow-lg" placeholder="Write your mail here.." id="email" name="email"
+             style="height: 400px"></textarea>
+           <div class='flex justify-center items-center w-full py-10'>
+             <button class="px-[50px] py-[20px] btn btn-lg btn-primary rounded-[40px] text-[20px] font-semibold drop-shadow-lg" >Submit</button>
+           </div>
+         </div>
+       </form>
+     </div>
+   </div>
+
+  <script>
+    function validateForm() {
+      var email = document.getElementById("email").value;
+      if (email.trim() === "") {
+        alert("Please enter an email.");
+        return false;
+      }
+      return true;
+    }
+
+    function scrollToForm() {
+      var formSection = document.getElementById("form-section");
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+
+</html>
